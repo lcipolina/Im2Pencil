@@ -96,7 +96,7 @@ def main(in_dir='input'):
         unitE = unitE.unsqueeze(0)
 
         filenameS = filename[:-9] + '_gf.jpg'
-        imgS, unitS = preprocess(os.path.join(in_dir, filenameS), 4, opt.shading_style)
+        imgS, unitS = preprocess(f'{filepath}/{filename}', 4, opt.shading_style)
         unitS = unitS.unsqueeze(0)
         
         imgE_xdog = XDoG(imgE, opt.Sigma)
