@@ -13,7 +13,7 @@ from models import networks
 
 
 def preprocess(img_path, num_style, ind):
-    im = Image.open(img_path)
+    im = Image.open(img_path).convert('L')
     w = im.size[0]
     h = im.size[1]
 
