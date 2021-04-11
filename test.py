@@ -88,11 +88,11 @@ def main(in_dir='input'):
     netG2.cuda()
 
 
-    for files in glob.glob(in_dir):
-        filepath, filename = os.path.split(files)
+    for _files in os.listdir(in_dir):
+        filepath, filename = in_dir, _files
         print(filename)
 
-        imgE, unitE = preprocess(files, 2, opt.outline_style)
+        imgE, unitE = preprocess(f'{filepath}/{filename}', 2, opt.outline_style)
         unitE = unitE.unsqueeze(0)
 
         filenameS = filename[:-9] + '_gf.jpg'
