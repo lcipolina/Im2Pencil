@@ -66,8 +66,8 @@ def deprocess(output):
 
 
 
-def main():
-    in_dir = 'extract_edge_tone/data/edge_tone/'
+def main(in_dir='input'):
+    #in_dir = 'input'
     out_dir = 'output'
     if not os.path.exists(out_dir): os.mkdir(out_dir)
 
@@ -88,7 +88,7 @@ def main():
     netG2.cuda()
 
 
-    for files in glob.glob(in_dir + '/*_edge.jpg'):
+    for files in glob.glob(in_dir):
         filepath, filename = os.path.split(files)
         print(filename)
 
