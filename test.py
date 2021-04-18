@@ -13,7 +13,7 @@ from models import networks
 
 
 def preprocess(img_path, num_style, ind):
-    im = Image.open(img_path).convert('L')
+    im = Image.open(img_path)
     w = im.size[0]
     h = im.size[1]
 
@@ -66,8 +66,8 @@ def deprocess(output):
 
 
 
-def main(in_dir='input'):
-    #in_dir = 'input'
+def main():
+    in_dir = 'input'
     out_dir = 'output'
     if not os.path.exists(out_dir): os.mkdir(out_dir)
 
@@ -88,15 +88,15 @@ def main(in_dir='input'):
     netG2.cuda()
 
 
-    for _files in os.listdir(in_dir):
-        filepath, filename = in_dir, _files
+    for files in glob.glob(in_dir + '/*_edge.jpg'):
+        filepath, filename = os.path.split(files)
         print(filename)
 
-        imgE, unitE = preprocess(f'{filepath}/{filename}', 2, opt.outline_style)
+        imgE, unitE = preprocess(files, 2, opt.outline_style)
         unitE = unitE.unsqueeze(0)
 
         filenameS = filename[:-9] + '_gf.jpg'
-        imgS, unitS = preprocess(f'{filepath}/{filename}', 4, opt.shading_style)
+        imgS, unitS = preprocess(os.path.join(in_dir, filenameS), 4, opt.shading_style)
         unitS = unitS.unsqueeze(0)
         
         imgE_xdog = XDoG(imgE, opt.Sigma)
