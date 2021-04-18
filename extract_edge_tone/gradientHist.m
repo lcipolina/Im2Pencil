@@ -66,4 +66,4 @@ function H = gradientHist( M, O, varargin )
 % Copyright 2014 Piotr Dollar & Ron Appel.  [pdollar-at-gmail.com]
 % Licensed under the Simplified BSD License [see external/bsd.txt]
 
-H = gradientMex('gradientHist',M,O,varargin{:});
+%H = gradientMex('gradientHist',M,O,varargin{:});

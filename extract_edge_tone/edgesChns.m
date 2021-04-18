@@ -37,7 +37,7 @@ for t=1:nTypes
     k=k+1; chns{k}=imResample(H,max(1,s/shrink));
   end
 end
-chns=cat(3,chns{1:k}); assert(size(chns,3)==opts.nChns);
+chns=cat(3,chns{1:k}); %assert(size(chns,3)==opts.nChns);
 chnSm=opts.chnSmooth/shrink; if(chnSm>1), chnSm=round(chnSm); end
 simSm=opts.simSmooth/shrink; if(simSm>1), simSm=round(simSm); end
 chnsReg=convTri(chns,chnSm); chnsSim=convTri(chns,simSm);

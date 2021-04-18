@@ -1,0 +1,5 @@
+1) a rgbConvert.m se le comento la ultima linea con mex
+2) imResample.m.orig tiene el original de imResample.m que se puenteo bilinear
+3) gradientHist se le muteo el mex en la ultima linea
+4) a edgesChns le saque el asset
+5) a edgesDetect le puse un .orig y le saque el mex a las funcs

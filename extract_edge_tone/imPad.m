@@ -36,7 +36,7 @@ function J = imPad( I, pad, type )
 % Copyright 2014 Piotr Dollar.  [pdollar-at-gmail.com]
 % Licensed under the Simplified BSD License [see external/bsd.txt]
 
-J = imPadMex( I, pad, type );
+%J = imPadMex( I, pad, type );
 
 %%% OLD Matlab code - slower (although still faster than padarray)
 % [h,w,~]=size(I); p=pad; k=length(p);
