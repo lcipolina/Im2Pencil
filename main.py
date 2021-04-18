@@ -1,4 +1,4 @@
-import os
+import os,sys
 import torch
 import numpy as np
 import torchvision.transforms as transforms
@@ -120,4 +120,10 @@ def main(in_dir, out_dir):
         output = outputE * outputS
         output_tosave = Image.fromarray((output*255).astype(np.uint8))
         output_tosave.save(os.path.join(out_dir, filename[:-9]+'_e'+str(opt.outline_style)+'_s'+str(opt.shading_style)+'_combo.png'))
+
+
+
+if __name__=='__main__':
+    main(sys.argv[1],sys.argv[2])
+
 
