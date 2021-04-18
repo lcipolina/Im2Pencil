@@ -68,8 +68,11 @@ def deprocess(output):
 
 
 
-def main(in_dir, out_dir):
-    if not os.path.exists(out_dir): os.mkdir(out_dir)
+def main():
+    in_dir = '../drive/MyDrive/new-folder/input/archs'
+    out_dir = '../drive/MyDrive/new-folder/output/archs'
+    if not os.path.exists(out_dir): 
+        os.mkdir(out_dir)
 
     opt = TestOptions().parse()
     opt.which_model_netG = 'resnet_9blocks_unit' 
